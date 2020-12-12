@@ -13,11 +13,12 @@ def uniqueUpdate(data1, data2):
             if k1 == k:
                 # Found pair with key = k
                 kFound = True
-                # Remove (k, v1) from data1
-                data1.remove([k, v1])
-                # Add (k, [v1, v2])
-                # to dictionary
-                dupKeys[k] = [v1, v2]
+                if v1 != v2:
+                    # Remove (k, v1) from data1
+                    data1.remove([k, v1])
+                    # Add (k, [v1, v2])
+                    # to dictionary
+                    dupKeys[k] = [v1, v2]
 
         # After the loop, check if
         # k was not found
